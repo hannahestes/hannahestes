@@ -323,6 +323,15 @@ code {
     justify-content: center;
 }
 
+/* If using an image for the emoji indicator, make it fit the circle */
+.emoji-indicator img,
+.emoji-indicator .emoji-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
 
 /* Handle for social icons */
 .social-icons .social-icon {

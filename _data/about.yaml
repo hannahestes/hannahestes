@@ -1,42 +1,47 @@
 # basic information
-name: khang nguyen
-profile-pic: assets/img/new_pic.jpg
-pronunciation: /kʰæŋ/
-pronunciation-emoji: 🎧
+name: Hannah Estes
+profile-pic: assets/img/Hannah_Portrait_Square.JPG
+pronunciation: #/kʰæŋ/
+pronunciation-emoji: #🎧
 
 # emoji indicator
-emoji: 🍀
-desc-emoji: four-leaf clover
+emoji: 
+desc-emoji: hi!
+# emoji-img:  assets/img/comic_portrait_square.png # assets/img/emoji_icon.png    # optional: set a small image path to use instead of the emoji (leave blank to use emoji)
 
 # social links
-scholar: https://scholar.google.com/citations?user=Z6_5ZTEAAAAJ
-researchgate: https://www.researchgate.net/profile/Khang-Nguyen-133
-github: https://github.com/mkhangg
-youtube: https://www.youtube.com/@_m.khangg_
-resume: assets/doc/Resume_KhangNguyen.pdf
-projects: show            # delete "show" or leave it blank to hide this icon
-location: https://maps.app.goo.gl/ChzvajkDzdL4RxEJ7
+scholar: https://scholar.google.com/citations?user=IWVkTtEAAAAJ
+researchgate: https://www.researchgate.net/profile/Hannah-Estes-2
+github: https://github.com/hannahestes
+youtube: 
+resume: assets/doc/Estes_Hannah_CV.pdf
+projects: #show            # delete "show" or leave it blank to hide this icon
+location: https://maps.app.goo.gl/Pdk75JdnUGUdnWdP7
 codepen: 
-orcid: https://orcid.org/0000-0003-3471-5533
+orcid: https://orcid.org/0009-0006-9893-286X
 contact: show            # delete "show" or leave it blank to hide this icon
+linkedin: https://www.linkedin.com/in/hannahestes6
 
 # information for contact card
-dept: cse @ uta
-lab: learn lab @ erb 128
-email: khang.nguyen@uta.edu
-phone: +1 (470) 815-5812
-website: https://mkhangg.com/
-web-dns: mkhangg.com
+dept: cs @ nc state
+lab: wiser lab
+email: hmestes@ncsu.edu
+phone: 
+website: https://hannahestes.github.com/
+web-dns: hannahestes.github.com
+linkedin: hannahestes6
 
 # about me
-first-paragraph: I am a research assistant at the <hightlight>Learning and Adaptive Robotics (LEARN) Lab</hightlight> affiliated with the <a href="https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/cse" target="_blank" rel="noopener">University of Texas at Arlington</a> under the guidance of <a href="https://www.uta.edu/academics/faculty/profile?username=huber" target="_blank" rel="noopener">Dr. Manfred Huber</a>, building upon the research I initiated during my undergraduate studies here. (◕▿◕)
-second-paragraph: I grew up in <a href="https://en.wikipedia.org/wiki/Saigon" target="_blank" rel="noopener">Saigon, Vietnam</a>, and was fortunate to spend my most memorable time at the <a href="https://en.wikipedia.org/wiki/VNU-HCM_High_School_for_the_Gifted" target="_blank" rel="noopener">VNU-HCM High School for the Gifted</a> (informatics program of 2020) and previously <a href="https://en.wikipedia.org/wiki/Tr%E1%BA%A7n_%C4%90%E1%BA%A1i_Ngh%C4%A9a_High_School_for_the_Gifted" target="_blank" rel="noopener">TĐN Secondary School for the Gifted</a> (mathematics program of 2017) with very good friends - too many to name them here, where we played football (soccer) on concrete fields together afterschool.
-research-introduction: I do research in robotics, mainly focusing on applying <code>cognitive architectures to robotic grasping</code> to enable robots with a closely similar human grasping capability. Just imagine the robot enters the kitchen, finds a banana, grasps without crushing it, and brings it back to you.
+first-paragraph: I am a research assistant at the <a href="https://ncsu.software/" target="_blank" rel="noopener">Wolfpack Innovations Software Engineering Research (WISER) Lab</a> affiliated with the <a href="https://csc.ncsu.edu/" target="_blank" rel="noopener">NC State</a> under the guidance of <a href="https://kstolee.github.io/" target="_blank" rel="noopener">Dr. Katie Stolee</a>.
+
+second-paragraph: Got feedback, questions, or just want to chat? <a href="mailto:hmestes@ncsu.edu">Please reach out!</a>
+
+research-introduction: I’m fascinated by the human and organizational factors that shape software development, especially how team communication and coordination impact the products we build. My research focuses on the interactions between software product managers (SPMs) and software engineers (SWEs), exploring where alignment succeeds and where misalignment creates friction. I also enjoy creating educational opportunities, like an undergraduate course, to help future SPMs develop both the technical and interpersonal skills they need to thrive in real software teams.
 
 research-interests:
 
-  - field: Robotic Perception
-    subfields: semantic scene understanding, perception for grasping
+  - field: Software Engineering
+    subfields: team productivity, software product management
   
-  - field: Robotic Manipulation
-    subfields: learning to grasp, manipulative visual-motor skills
+  - field: Human-Computer Interaction
+    subfields: socio-technical systems, user-centered product design

@@ -6,10 +6,15 @@
             <div class="ring">
                 <div class="hollow-ring">
                     <img class="profile-image" src="{{ site.data.about.profile-pic }}" alt="{{ site.data.about.name }}">
-                    {% if site.data.about.emoji %} 
+                    {% if site.data.about.emoji-img %}
                         <div class="emoji-indicator">
-                            {{ site.data.about.emoji }} <span class="hover-text"> {{ site.data.about.desc-emoji }} </span> 
-                        </div> 
+                            <img class="emoji-image" src="{{ site.data.about.emoji-img }}" alt="{{ site.data.about.desc-emoji }}">
+                            {% if site.data.about.desc-emoji %}<span class="hover-text"> {{ site.data.about.desc-emoji }} </span>{% endif %}
+                        </div>
+                    {% elsif site.data.about.emoji %}
+                        <div class="emoji-indicator">
+                            {{ site.data.about.emoji }} <span class="hover-text"> {{ site.data.about.desc-emoji }} </span>
+                        </div>
                     {% endif %}
                 </div>
             </div>
@@ -24,6 +29,7 @@
         </div>
         <div class="social-icons">
             {% if site.data.about.codepen %} <a class="social-icon" href="{{ site.data.about.codepen }}" target="_blank" rel="noopener" title="CodePen"><i class="fab fa-codepen" style="font-size: 35px; color: #000000"></i></a> {% endif %}
+            {% if site.data.about.linkedin %} <a class="social-icon" href="{{ site.data.about.linkedin }}" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin" style="font-size: 35px; color: #0A66C2"></i></a> {% endif %}
             {% if site.data.about.orcid %} <a class="social-icon" href="{{ site.data.about.orcid }}" target="_blank" rel="noopener" title="ORCID"><i class="fab fa-orcid" style="font-size: 35px; color: #a6ce39"></i></a> {% endif %}
             {% if site.data.about.projects %} <a class="social-icon" onclick="scrollToTopDiv('#research');" title="Projects"><i class="fa fa-shapes" style="font-size: 35px; color: #e8828c"></i></a> {% endif %}
             {% if site.data.about.location %} <a class="social-icon" href="{{ site.data.about.location }}" target="_blank" rel="noopener" title="Location"><i class="fa fa-map-marker-alt" style="font-size: 35px; color: #635050"></i></a> {% endif %}
@@ -44,7 +50,7 @@
                         <div class="code-line"><span class="line-number">3</span><span class="code-content">    <span class="self">self</span>.<span class="self">dept</span>  = <span class="string">"{{ site.data.about.dept }}"</span> </span></div>
                         <div class="code-line"><span class="line-number">4</span><span class="code-content">    <span class="self">self</span>.<span class="self">lab</span>   = <span class="string">"{{ site.data.about.lab }}"</span> </span></div>
                         <div class="code-line"><span class="line-number">5</span><span class="code-content">    <span class="self">self</span>.<span class="self">email</span> = <span class="string">"{{ site.data.about.email }}"</span> </span></div>
-                        <div class="code-line"><span class="line-number">6</span><span class="code-content">    <span class="self">self</span>.<span class="self">phone</span> = <span class="string">"{{ site.data.about.phone }}"</span> </span></div>
+                        <div class="code-line"><span class="line-number">6</span><span class="code-content">    <span class="self">self</span>.<span class="self">linkedin</span> = <span class="string">"{{ site.data.about.linkedin }}"</span> </span></div>
                         <div class="code-line"><span class="line-number">7</span><span class="code-content"></span></div>
                         <div class="code-line"><span class="line-number">8</span><span class="code-content">  <span class="keyword">def</span> <span class="function">flipCard</span>(<span class="self">self</span>):</span></div>
                         <div class="code-line"><span class="line-number">9</span><span class="code-content">    <span class="function">print</span>(<span class="string">"tap on the card to flip."</span>)</span></div>

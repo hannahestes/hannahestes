@@ -14,16 +14,35 @@ btn.on('click', function(e) {
     const speechBalloon = document.querySelector('.speech-balloon');
     const clickSound = new Audio('assets/sounds/collision_sound.wav');
     $('html, body').animate({scrollTop:0}, '300');
-    speechBalloon.innerText = 'back to top!';
+    showSpeech('back to top!');
     clickSound.play();
 });
 
+// helper to show speech balloon messages and auto-hide after 3 seconds
+let _speechTimeout = null;
+function showSpeech(text) {
+    const el = document.querySelector('.speech-balloon');
+    if (!el) return;
+    el.innerText = text;
+    el.classList.remove('hidden');
+    if (_speechTimeout) {
+        clearTimeout(_speechTimeout);
+    }
+    _speechTimeout = setTimeout(() => {
+        el.classList.add('hidden');
+        _speechTimeout = null;
+    }, 3000);
+}
 
-// Play pronunciation audio when the emoji is clicked
-document.getElementById('volumeEmoji').addEventListener('click', function() {
-    const pronunicationAudio = new Audio('assets/sounds/khang.mp3');
-    pronunicationAudio.play();
-});
+
+// Play pronunciation audio when the emoji is clicked (guarded)
+var _volumeEmojiEl = document.getElementById('volumeEmoji');
+if (_volumeEmojiEl) {
+    _volumeEmojiEl.addEventListener('click', function() {
+        const pronunicationAudio = new Audio('assets/sounds/khang.mp3');
+        pronunicationAudio.play();
+    });
+}
 
 
 // Toggle navigation menu bar
@@ -75,7 +94,7 @@ function toggleTheme() {
         buttonEl.classList.remove('light-theme');
         buttonEl.classList.add('dark-theme');
         buttonEl.innerText = '☀️';
-        speechBalloon.innerText = 'lights turned off!';
+        showSpeech('lights turned off!');
         clickSound.play();
     } else {
         bodyEl.classList.remove('dark-theme');
@@ -83,7 +102,7 @@ function toggleTheme() {
         buttonEl.classList.remove('dark-theme');
         buttonEl.classList.add('light-theme');
         buttonEl.innerText = '🌙';
-        speechBalloon.innerText = 'lights turned on!';
+        showSpeech('lights turned on!');
         clickSound.play();
     }
 }
@@ -125,10 +144,15 @@ let isMobile = 'ontouchstart' in window;
 let startEvent = isMobile ? 'touchstart' : 'mousedown';
 let moveEvent = isMobile ? 'touchmove' : 'mousemove';
 let endEvent = isMobile ? 'touchend' : 'mouseup';
+// popup icon and dismissal area
+var popupIconContainer = document.getElementById('popupIconContainer');
+var dismissalArea = document.getElementById('dismissalArea');
+var startX = 0, startY = 0, originalX = 0, originalY = 0;
 
 
-// Capture mouse down (desktop) or touch start (mobile) events
-popupIconContainer.addEventListener(startEvent, (e) => {
+// Capture mouse down (desktop) or touch start (mobile) events (guarded)
+if (popupIconContainer) {
+    popupIconContainer.addEventListener(startEvent, (e) => {
     e.preventDefault();
     isDragging = true;
     let clientX = isMobile ? e.touches[0].clientX : e.clientX;
@@ -138,27 +162,30 @@ popupIconContainer.addEventListener(startEvent, (e) => {
     startY = clientY;
     originalX = popupIconContainer.getBoundingClientRect().left;
     originalY = popupIconContainer.getBoundingClientRect().top;
-    dismissalArea.style.display = 'flex';
+    if (dismissalArea) dismissalArea.style.display = 'flex';
     
     // Hide the speech balloon as users start dragging and drag the icon
     document.querySelector('.speech-balloon').classList.add('hidden');
 });
 
 
-// Capture mouse move (desktop) or touch move (mobile) events
-document.addEventListener(moveEvent, (e) => {
-    if (!isDragging) {
-        return;
-    }
-    
-    let clientX = isMobile ? e.touches[0].clientX : e.clientX;
-    let clientY = isMobile ? e.touches[0].clientY : e.clientY;
+    // Capture mouse move (desktop) or touch move (mobile) events
+    document.addEventListener(moveEvent, (e) => {
+        if (!isDragging) {
+            return;
+        }
+        
+        let clientX = isMobile ? e.touches[0].clientX : e.clientX;
+        let clientY = isMobile ? e.touches[0].clientY : e.clientY;
 
-    let x = originalX + (clientX - startX);
-    let y = originalY + (clientY - startY);
-    popupIconContainer.style.left = `${x}px`;
-    popupIconContainer.style.bottom = `calc(100% - ${y}px - ${popupIconContainer.offsetHeight}px)`;
-});
+        let x = originalX + (clientX - startX);
+        let y = originalY + (clientY - startY);
+        if (popupIconContainer) {
+            popupIconContainer.style.left = `${x}px`;
+            popupIconContainer.style.bottom = `calc(100% - ${y}px - ${popupIconContainer.offsetHeight}px)`;
+        }
+    });
+}
 
 
 // Capture mouse up (desktop) or touch end (mobile) events
@@ -176,11 +203,11 @@ document.addEventListener(endEvent, (e) => {
 
     // Check if icon is near the middle bottom dismissal area
     if (Math.abs(clientX - centerX) < 50 && Math.abs(clientY - centerY) < 100) {
-        popupIconContainer.classList.add('hidden');
+        if (popupIconContainer) popupIconContainer.classList.add('hidden');
         clickSound.play();
     }
 
-    dismissalArea.style.display = 'none';
+    if (dismissalArea) dismissalArea.style.display = 'none';
     isDragging = false;
 });
 
@@ -203,30 +230,38 @@ function progressBar() {
     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     var scrolled = (winScroll / height) * 100;
-    document.getElementById("progressBar").style.width = scrolled + "%";
+    var _progressBarEl = document.getElementById("progressBar");
+    if (_progressBarEl) {
+        _progressBarEl.style.width = scrolled + "%";
+    }
 }
 
 
 // Scripts to activate/deactivate contact info card 
 var overlaybg = document.getElementById('overlay-bg');
+var contactTrigger = document.getElementById('contact-card-trigger');
+if (overlaybg && contactTrigger) {
+    contactTrigger.onclick = function() {
+        overlaybg.style.display = 'flex';
+    };
 
-document.getElementById('contact-card-trigger').onclick = function() {
-    overlaybg.style.display = 'flex';
-};
-
-overlaybg.addEventListener('click', function(event) {
-    if (event.target === overlaybg) {
-        overlaybg.style.display = 'none';
-    }
-});
+    overlaybg.addEventListener('click', function(event) {
+        if (event.target === overlaybg) {
+            overlaybg.style.display = 'none';
+        }
+    });
+}
 
 
 // Play the flipping-card sound when user flips the contact info card
-document.getElementById('front_end_card').addEventListener('click', function() {
-    this.classList.toggle('flip');
-    const flipAudio = new Audio('assets/sounds/flipcard_sound.mp3');
-    flipAudio.play();
-});
+var frontEndCard = document.getElementById('front_end_card');
+if (frontEndCard) {
+    frontEndCard.addEventListener('click', function() {
+        this.classList.toggle('flip');
+        const flipAudio = new Audio('assets/sounds/flipcard_sound.mp3');
+        flipAudio.play();
+    });
+}
 
 
 // Get all filter buttons and change their active status as user clicks
@@ -241,11 +276,10 @@ filterButtonsProject.forEach(function(filterButtonProject) {
         });
         this.classList.add('active');
         if (this.textContent === "perception + manipulation") {
-            speechBalloon.innerText = 'see RoPM projects!';
+            showSpeech('see RoPM projects!');
         } else {
-            speechBalloon.innerText = 'see ' + this.textContent + ' projects!';
+            showSpeech('see ' + this.textContent + ' projects!');
         }
-        speechBalloon.classList.remove('hidden');
     });
 });
 
@@ -255,8 +289,7 @@ filterButtonsGithub.forEach(function(filterButtonGithub) {
             flrbtn.classList.remove('active');
         });
         this.classList.add('active');
-        speechBalloon.innerText = 'see ' + this.textContent + ' repos!';
-        speechBalloon.classList.remove('hidden');
+        showSpeech('see ' + this.textContent + ' repos!');
     });
 });
 
@@ -608,17 +641,23 @@ document.addEventListener('DOMContentLoaded', function() {
     if (currentHour > 19 || currentHour <= 7) {
         document.body.classList.add('dark-theme');
         buttonEl.innerText = '☀️';
-        speechBalloon.innerText = 'it\'s night, lights off!';
+        // keep theme selection but use a neutral default speech message
     } else {
         document.body.classList.add('light-theme');
         buttonEl.innerText = '🌙';
-        speechBalloon.innerText = 'it\'s day, lights on!';
+        // keep theme selection but use a neutral default speech message
     }
+
+    // Default assistant message on load
+    showSpeech('hi!');
 });
 
 
 // Automatically update year in footer
-document.getElementById("currentYear").textContent = new Date().getFullYear();
+var _currentYearEl = document.getElementById("currentYear");
+if (_currentYearEl) {
+    _currentYearEl.textContent = new Date().getFullYear();
+}
 
 
 // Canvas for particle moves
