@@ -519,37 +519,6 @@ code {
     color: #ffffff;
 }
 
-/* Styles for filter buttons */
-#filters-pictures .filter-button {
-    padding: 4px 7px;
-    border: 1px solid #333333;
-    border-radius: 10px;
-    background-color: transparent;
-    color: #333333;
-    cursor: pointer;
-    transition: background-color 0.5s, box-shadow 0.5s;
-}
-#filters-pictures .filter-button:hover {
-    background-color: rgba(194, 194, 194, 0.45);
-}
-#filters-pictures .filter-button.active {
-    background-color: rgba(194, 194, 194, 0.45);
-}
-
-
-/* Light theme styles for filter button */
-.light-theme #filters-pictures .filter-button {
-    border: 1px solid #333333;
-    color: #333333;
-}
-
-
-/* Dark theme styles for filter button */
-.dark-theme #filters-pictures .filter-button {
-    border: 1px solid #ffffff;
-    color: #ffffff;
-}
-
 
 /* Styles for pager buttons */
 .isotope-pager-project {
@@ -592,6 +561,95 @@ code {
 
 /* Disabled stye for pager buttons */
 .isotope-pager-project .pager:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: default;
+    opacity: 0.5;
+    border: 1px solid #aaaaaa;
+}
+
+/* Styles for project list */
+#pictures {
+    margin: 0px;
+}
+.picture {
+    margin: 0px;
+}
+
+
+/* Styles for filter buttons */
+#filters-pictures .filter-button {
+    padding: 4px 7px;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #333333;
+    cursor: pointer;
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+#filters-pictures .filter-button:hover {
+    background-color: rgba(194, 194, 194, 0.45);
+}
+#filters-pictures .filter-button.active {
+    background-color: rgba(194, 194, 194, 0.45);
+}
+
+
+/* Light theme styles for filter button */
+.light-theme #filters-pictures .filter-button {
+    border: 1px solid #333333;
+    color: #333333;
+}
+
+
+/* Dark theme styles for filter button */
+.dark-theme #filters-pictures .filter-button {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+
+/* Styles for pager buttons */
+.isotope-pager-picture {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+}
+.isotope-pager-picture .pager {
+    display: block;
+    padding: 4px 7px;
+    background-color: transparent;
+    border: 1px solid #333333;
+    margin: 0 5px;
+    border-radius: 7px;
+    transition: 0.5s;
+}
+.isotope-pager-picture .pager:hover {
+    background-color: rgba(194, 194, 194, 0.45);
+    cursor: pointer;
+}
+.isotope-pager-picture .pager.active {
+    background-color: rgba(194, 194, 194, 0.45);
+}
+
+
+/* Light theme styles for pager button */
+.light-theme .isotope-pager-picture .pager {
+    border: 1px solid #333333;
+    color: #333333;
+}
+
+
+/* Dark theme styles for pager button */
+.dark-theme .isotope-pager-picture .pager {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+
+/* Disabled stye for pager buttons */
+.isotope-pager-picture .pager:disabled {
     background-color: #cccccc;
     color: #666666;
     cursor: default;

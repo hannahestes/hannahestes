@@ -633,6 +633,7 @@ $(document).ready(function() {
                 resolve();
             } else {
                 img.onload = resolve;
+                img.onerror = resolve;
             }
         });
     });
@@ -643,22 +644,31 @@ $(document).ready(function() {
         initializeIsotopeGithub();
         initializeIsotopeGallery();
     });
+    // Fallback: if images hang or onerror doesn't fire for some reason, ensure gallery initializes
+    setTimeout(function() {
+        if (!window._galleryIsotopeInitialized) {
+            initializeIsotopeGallery();
+        }
+    }, 2000);
 });
 
 
 // Initialize Isotope for gallery pictures (filter by category)
 function initializeIsotopeGallery() {
+    if (window._galleryIsotopeInitialized) return;
     if ($('#pictures').length === 0) {
+        window._galleryIsotopeInitialized = true;
         return;
     }
 
+    window._galleryIsotopeInitialized = true;
     var $gallery = $('#pictures').isotope({
         itemSelector: '.news-card',
         layoutMode: 'fitRows'
     });
 
-    // Bind filter buttons (generated from years)
-    $('#filters-pictures .filter-button').click(function() {
+    // Bind filter buttons (generated from categories in YAML)
+    $('#filters-pictures .filter-button').off('click').on('click', function() {
         $('#filters-pictures .filter-button').removeClass('active');
         $(this).addClass('active');
         var filter = $(this).attr('data-filter');
