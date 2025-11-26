@@ -266,6 +266,7 @@ if (frontEndCard) {
 
 // Get all filter buttons and change their active status as user clicks
 var filterButtonsProject = document.querySelectorAll('#filters-project .filter-button'); 
+var filterButtonsPicture = document.querySelectorAll('#filters-pictures .filter-button'); 
 var filterButtonsGithub = document.querySelectorAll('#filters-resources .filter-button'); 
 var speechBalloon = document.querySelector('.speech-balloon');
 
@@ -279,6 +280,20 @@ filterButtonsProject.forEach(function(filterButtonProject) {
             showSpeech('see RoPM projects!');
         } else {
             showSpeech('see ' + this.textContent + ' projects!');
+        }
+    });
+});
+
+filterButtonsPicture.forEach(function(filterButtonPicture) {
+    filterButtonPicture.addEventListener('click', function() {
+        filterButtonsPicture.forEach(function(flrbtn) {
+            flrbtn.classList.remove('active');
+        });
+        this.classList.add('active');
+        if (this.textContent === "perception + manipulation") {
+            showSpeech('see pictures!');
+        } else {
+            showSpeech('see ' + this.textContent + ' pictures!');
         }
     });
 });
@@ -626,8 +641,31 @@ $(document).ready(function() {
         initializeOwlCarousel();
         initializeIsotopeProjects();
         initializeIsotopeGithub();
+        initializeIsotopeGallery();
     });
 });
+
+
+// Initialize Isotope for gallery pictures (filter by category)
+function initializeIsotopeGallery() {
+    if ($('#pictures').length === 0) {
+        return;
+    }
+
+    var $gallery = $('#pictures').isotope({
+        itemSelector: '.news-card',
+        layoutMode: 'fitRows'
+    });
+
+    // Bind filter buttons (generated from years)
+    $('#filters-pictures .filter-button').click(function() {
+        $('#filters-pictures .filter-button').removeClass('active');
+        $(this).addClass('active');
+        var filter = $(this).attr('data-filter');
+        var selector = (filter === '*') ? '*' : '.news-card[data-filter="' + filter + '"]';
+        $gallery.isotope({ filter: selector });
+    });
+}
 
 
 // Dark/Light theme based on predefined time

@@ -1,4 +1,10 @@
-<div class="gallery">
+<!-- <div class="gallery" data-filter="{{ photo.category }}">
     <img src="{{ picture.source }}" alt="{{ picture.caption }}" width="800" height="600">
     <div class="desc">{{ picture.caption }} ({{ picture.year }})</div>
+</div> -->
+
+<div class="news-card gallery" data-filter="{{ picture.category }}">
+    <img src="{{ picture.source }}" class="w-full rounded-lg" alt="{{ picture.caption }}">
+    <div class="news-desc">{{ picture.caption }}</div>
+    <div class="news-time">{{ picture.year }}</div>
 </div>

@@ -519,6 +519,37 @@ code {
     color: #ffffff;
 }
 
+/* Styles for filter buttons */
+#filters-pictures .filter-button {
+    padding: 4px 7px;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #333333;
+    cursor: pointer;
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+#filters-pictures .filter-button:hover {
+    background-color: rgba(194, 194, 194, 0.45);
+}
+#filters-pictures .filter-button.active {
+    background-color: rgba(194, 194, 194, 0.45);
+}
+
+
+/* Light theme styles for filter button */
+.light-theme #filters-pictures .filter-button {
+    border: 1px solid #333333;
+    color: #333333;
+}
+
+
+/* Dark theme styles for filter button */
+.dark-theme #filters-pictures .filter-button {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
 
 /* Styles for pager buttons */
 .isotope-pager-project {
