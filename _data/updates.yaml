@@ -1,85 +1,74 @@
 updates:
+# assets/img/updates_gan/spider_bot.jpg
 
-  # - picture: assets/img/updates_gan/boy_cochair.jpg
-  #   desc: I will serve as co-chair for the <hightlight>Object Detection session</hightlight> at IROS 2024.
-  #   time: October 2024
-
-  # - picture: assets/img/updates_gan/abudhabi_boy.jpg
-  #   desc: I will attend IROS 2024 in <hightlight>Abu Dhabi, UAE</hightlight>.
-  #   time: October 2024
-
-  # - picture: assets/img/updates_gan/fix_robot.jpg
-  #   desc: I will be the GTA for <hightlight>CSE 4360 (Robotics) course</hightlight> this semester!
-  #   time: August 2024
-
-  - picture: assets/img/updates_gan/scanner_bots.jpg
+  - picture: 
     desc: My <a target="_blank" href="https://csc.ncsu.edu/2025/10/how-hannah-estes-found-her-passion-for-research/">research journey</a> was highlighted in NC State's CS News!
     time: June 2024
 
-  - picture: assets/img/updates_gan/lab_boy.jpg
+  - picture: 
     desc: I will attend VL/HCC in <hightlight>Raleigh, North Carolina</hightlight>. 
     time: October 2025
 
-  - picture: assets/img/updates_gan/graduation_boy.jpg
+  - picture: 
     desc: I presented our paper in <hightlight>Trondheim, Norway</hightlight>!
     time: June 20, 2025
 
-  - picture: assets/img/updates_gan/city_boy.jpg
+  - picture: 
     desc: I will attend the CRA <a target="_blank" href="https://cra.org/cra-wp/events/2025-cra-wp-grad-cohort-workshops/">Grad Cohort Workshop</a> in Denver, Colorado! 
     time: April 2025
   
-  - picture: assets/img/updates_gan/travel_boy.jpg
+  - picture: 
     desc: I passed my <hightlight>written prelim exam</hightlight>!
     time: March 25, 2025
 
-  - picture: assets/img/updates_gan/holding_can_robot.jpg
+  - picture: 
     desc: "My first paper was <hightlight>accepted</hightlight> to FSE-SEET in Norway! #noryay"
     time: March 25, 2025
 
-  - picture: assets/img/updates_gan/calibrating_robot.jpg
+  - picture: 
     desc: Officially <hightlight>starting my PhD</hightlight> in the WISER lab with Dr. Katie Stolee!
     time: August 2024
 
-  - picture: assets/img/updates_gan/fireworks_robot.jpg
+  - picture: 
     desc: Interned at <hightlight>Pearson</hightlight> in Durham, North Carolina.
     time: May 2024
 
-  - picture: assets/img/updates_gan/reading_boy_2.jpg
+  - picture: 
     desc: Done with my undergrad!
     time: May 2024
 
-  - picture: assets/img/updates_gan/happy_robot.jpg
+  - picture: 
     desc: Starting my <hightlight>undergraduate research</hightlight> journey with Dr. Katie Stolee!
     time: November 2023
   
-  - picture: assets/img/updates_gan/spider_bot.jpg
+  - picture: 
     desc: Chosen to represent the CS department at the <a target="_blank" href="https://businessofsoftware.org/events/bos-usa-2024/">Business of Software Conference</a>.
     time: September 2023
 
-  - picture: assets/img/updates_gan/reading_boy.jpg
+  - picture: 
     desc: Nominated for the <hightlight>Faculty Senior Scholar</hightlight> award by the CS department.
     time: March 2023
 
-  - picture: assets/img/updates_gan/boy_robot.jpg
+  - picture: 
     desc: Interned at <hightlight>Protiviti</hightlight> in Dallas, Texas.
     time: May 2022
     
-  - picture: assets/img/updates_gan/happy_tree.jpg
+  - picture: 
     desc: Nominated as the ambassador with most volunteer hours!
     time: May 2022
 
-  - picture: assets/img/updates_gan/farm_bot.jpg
+  - picture: 
     desc: I am an official NC State <hightlight>Computer Science ambassador</hightlight>.
     time: August 2022
     
-  - picture: assets/img/updates_gan/boy_systems.jpg
+  - picture: 
     desc: A semester abroad in the <hightlight>Czech Republic, Germany, and Austria</hightlight>!
     time: January 2022
 
-  - picture: assets/img/updates_gan/boy_school.jpg
+  - picture: 
     desc: I completed NC State's <hightlight>Developing Cultural Competence Certificate</hightlight>.
     time: August 2020
 
-  - picture: assets/img/updates_gan/boy_school.jpg
+  - picture: 
     desc: I start my undergrad at <hightlight>NC State</hightlight>.
     time: August 2020
