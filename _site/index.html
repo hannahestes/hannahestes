@@ -7,7 +7,7 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <meta name="description" content="website"/>
-        <meta name="author" content="khang nguyen"/>
+        <meta name="author" content="hannah estes"/>
         <title>hannah estes | phd cs @ nc state</title>
         <link rel="icon" type="image/x-icon" href="assets/img/comic_portrait_square.png"/>
         
@@ -26,6 +26,9 @@
 
         <!-- Core theme CSS -->
         <link href="styles/styles.css" rel="stylesheet"/>
+
+        <!-- Light Gallery -->
+        <link href=" https://cdn.jsdelivr.net/npm/lightgallery@2.9.0/css/lightgallery-bundle.min.css " rel="stylesheet">
 
     </head>
 
@@ -168,7 +171,7 @@
 
 <div class="row" id="updates">
     <div class="col">
-        <h2 class="mb-5"><i class="fas fa-edit" aria-hidden="true"></i> updates</h2>
+        <h2 class="mb-1"><i class="fas fa-edit" aria-hidden="true"></i> updates</h2>
         <p></p>
         <div class="owl-carousel owl-theme">
             
@@ -301,6 +304,39 @@
         </div>
         <p></p>
         <div id="projects" class="isotope">
+            
+                <div class="project" data-filter="spm">
+    <div class="row mb-4">
+        <div class="col-sm-4">
+            <img width="100%" height="auto" class="w-full rounded-lg" src="assets/img/FSE-SEET graphic.jpg" />
+        </div>
+        <div class="col-sm-8">
+            
+            <b>An Empirical Study of the Alignment between Software Product Managers and Software Engineers</b>
+            <br />
+            <i><a href="https://conf.researchr.org/home/fse-2026" target="_blank" rel="noopener">FSE (Montreal, Canada)</a></i> 
+             <b style="color: #e74d3c">[Currently Under Review]</b> 
+            <br />
+            <u>Hannah Estes</u>, Satwika Kancharla, Kathryn T. Stolee.
+            <br />
+             <a href="">[PDF]</a> 
+            
+            
+            
+            
+            
+            
+            <br />
+            <u><b><i>Abstract</i></b>:</u> 
+            On a software team, a software product manager is the bridge between customers and software engineers. They seek to understand the customers' needs and work with the software team to deliver solutions. Thus, collaboration between software engineers and software product managers is important. However, effective collaboration can break down in the presence of mismatched expectations. To clarify software engineers' expectations and identify potential
+            <span class="collapse" id="spm_questions">
+                misalignment between software product managers and software engineers, we designed and deployed a survey targeting software professionals that asks about the questions product managers should answer. We received 278 questions from 40 software product managers and 33 software engineers representing 21 companies. We classified the set of questions revealing topics surrounding the <i>logistics, product</i>, and <i>users.</i> Our results reveal that software engineers more often want to ask software product managers about users' characteristics and user <i>feedback</i> about the product. Our discussion includes details on problematic experiences that have arisen when working with software product managers, demonstrating that the misunderstanding of the <i>product</i>, <i>customers</i>, <i>market</i>, and <i>technical feasibility</i> of designs can lead to frustration. Through this work, we identify what software engineers want to ask software product managers, how that aligns with questions software product managers answer, and outline future research directions in this space.
+            </span> 
+            <span> <a href="#spm_questions" data-toggle="collapse" onclick="toggleText(this)" id="link-spm_questions">... See More</a></span>
+        </div>                       
+    </div>
+</div>
+
             
                 <div class="project" data-filter="spm">
     <div class="row mb-4">
@@ -527,36 +563,30 @@
 
 <div class="row" id="gallery">
     <div class="col">
-        <h2 class="mb-5"><i class="fas fa-camera" aria-hidden="true"></i>  gallery</h2>
+        <h2 class="mb-1"><i class="fas fa-camera" aria-hidden="true"></i>  gallery</h2>
         <p></p>
         <div id="filters-pictures">
             <button class="filter-button active" data-filter="*">all</button>
             
-                <button class="filter-button" data-filter="nps">national parks</button>
-            
-                <button class="filter-button" data-filter="ncsp">nc state parks</button>
-            
                 <button class="filter-button" data-filter="lab">lab fun</button>
-            
-                <button class="filter-button" data-filter="travel">travel</button>
             
                 <button class="filter-button" data-filter="conference">conference</button>
             
-                <button class="filter-button" data-filter="other">other</button>
-            
         </div>
         <p></p>
-        <div id="pictures" class="isotope">
+        <div id="gallery-pictures" class="gallery">
             
                 <!-- <div class="gallery" data-filter="">
     <img src="assets/memo/bbq.png" alt="WISER lab BBQ" width="800" height="600">
     <div class="desc">WISER lab BBQ (2025)</div>
 </div> -->
 
-<div class="news-card gallery" data-filter="lab">
+<div class="gallery-card" data-filter="lab">
     <img src="assets/memo/bbq.png" class="w-full rounded-lg" alt="WISER lab BBQ" />
-    <div class="news-desc">WISER lab BBQ</div>
-    <div class="news-time">2025</div>
+    <div class="overlay">
+        <div class="gallery-desc">WISER lab BBQ</div>
+        <div class="gallery-time">2025</div>
+    </div>
 </div>
             
                 <!-- <div class="gallery" data-filter="">
@@ -564,10 +594,12 @@
     <div class="desc">WISER lab BBQ p2 (2025)</div>
 </div> -->
 
-<div class="news-card gallery" data-filter="lab">
+<div class="gallery-card" data-filter="lab">
     <img src="assets/memo/bbq_p2.png" class="w-full rounded-lg" alt="WISER lab BBQ p2" />
-    <div class="news-desc">WISER lab BBQ p2</div>
-    <div class="news-time">2025</div>
+    <div class="overlay">
+        <div class="gallery-desc">WISER lab BBQ p2</div>
+        <div class="gallery-time">2025</div>
+    </div>
 </div>
             
                 <!-- <div class="gallery" data-filter="">
@@ -575,10 +607,12 @@
     <div class="desc">exploring the sunflowers (2025)</div>
 </div> -->
 
-<div class="news-card gallery" data-filter="lab">
+<div class="gallery-card" data-filter="lab">
     <img src="assets/memo/exploring_sunflowers.png" class="w-full rounded-lg" alt="exploring the sunflowers" />
-    <div class="news-desc">exploring the sunflowers</div>
-    <div class="news-time">2025</div>
+    <div class="overlay">
+        <div class="gallery-desc">exploring the sunflowers</div>
+        <div class="gallery-time">2025</div>
+    </div>
 </div>
             
                 <!-- <div class="gallery" data-filter="">
@@ -586,10 +620,12 @@
     <div class="desc">exploring trondheim (2025)</div>
 </div> -->
 
-<div class="news-card gallery" data-filter="conference">
+<div class="gallery-card" data-filter="conference">
     <img src="assets/memo/exploring_trondheim.png" class="w-full rounded-lg" alt="exploring trondheim" />
-    <div class="news-desc">exploring trondheim</div>
-    <div class="news-time">2025</div>
+    <div class="overlay">
+        <div class="gallery-desc">exploring trondheim</div>
+        <div class="gallery-time">2025</div>
+    </div>
 </div>
             
                 <!-- <div class="gallery" data-filter="">
@@ -597,10 +633,12 @@
     <div class="desc">FSE group (20125)</div>
 </div> -->
 
-<div class="news-card gallery" data-filter="conference">
+<div class="gallery-card" data-filter="conference">
     <img src="assets/memo/fse_academic_family.png" class="w-full rounded-lg" alt="FSE group" />
-    <div class="news-desc">FSE group</div>
-    <div class="news-time">20125</div>
+    <div class="overlay">
+        <div class="gallery-desc">FSE group</div>
+        <div class="gallery-time">20125</div>
+    </div>
 </div>
             
                 <!-- <div class="gallery" data-filter="">
@@ -608,10 +646,12 @@
     <div class="desc">Dr. Kuttal's potluck (2025)</div>
 </div> -->
 
-<div class="news-card gallery" data-filter="lab">
+<div class="gallery-card" data-filter="lab">
     <img src="assets/memo/kuttal_potluck.png" class="w-full rounded-lg" alt="Dr. Kuttal's potluck" />
-    <div class="news-desc">Dr. Kuttal's potluck</div>
-    <div class="news-time">2025</div>
+    <div class="overlay">
+        <div class="gallery-desc">Dr. Kuttal's potluck</div>
+        <div class="gallery-time">2025</div>
+    </div>
 </div>
             
                 <!-- <div class="gallery" data-filter="">
@@ -619,10 +659,12 @@
     <div class="desc">VL/HCC fun (2025)</div>
 </div> -->
 
-<div class="news-card gallery" data-filter="conference">
+<div class="gallery-card" data-filter="conference">
     <img src="assets/memo/vlhcc_group.png" class="w-full rounded-lg" alt="VL/HCC fun" />
-    <div class="news-desc">VL/HCC fun</div>
-    <div class="news-time">2025</div>
+    <div class="overlay">
+        <div class="gallery-desc">VL/HCC fun</div>
+        <div class="gallery-time">2025</div>
+    </div>
 </div>
             
                 <!-- <div class="gallery" data-filter="">
@@ -630,10 +672,12 @@
     <div class="desc">VL/HCC! (2025)</div>
 </div> -->
 
-<div class="news-card gallery" data-filter="conference">
+<div class="gallery-card" data-filter="conference">
     <img src="assets/memo/vlhcc_p2.png" class="w-full rounded-lg" alt="VL/HCC!" />
-    <div class="news-desc">VL/HCC!</div>
-    <div class="news-time">2025</div>
+    <div class="overlay">
+        <div class="gallery-desc">VL/HCC!</div>
+        <div class="gallery-time">2025</div>
+    </div>
 </div>
             
                 <!-- <div class="gallery" data-filter="">
@@ -641,10 +685,12 @@
     <div class="desc">Passed my Written Prelim! (2025)</div>
 </div> -->
 
-<div class="news-card gallery" data-filter="lab">
+<div class="gallery-card" data-filter="lab">
     <img src="assets/memo/written_prelim.png" class="w-full rounded-lg" alt="Passed my Written Prelim!" />
-    <div class="news-desc">Passed my Written Prelim!</div>
-    <div class="news-time">2025</div>
+    <div class="overlay">
+        <div class="gallery-desc">Passed my Written Prelim!</div>
+        <div class="gallery-time">2025</div>
+    </div>
 </div>
             
         </div>
@@ -691,6 +737,10 @@
 
         <!-- Axios JS -->
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <!-- Gallery -->
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+        <script defer src='https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js'></script>
 
 		<!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>

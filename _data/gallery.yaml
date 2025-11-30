@@ -1,18 +1,18 @@
 introduction: some happy moments!
 
 categories:
-  - data-filter: nps
-    category-name: national parks
-  - data-filter: ncsp
-    category-name: nc state parks
+  # - data-filter: nps
+  #   category-name: national parks
+  # - data-filter: ncsp
+  #   category-name: nc state parks
   - data-filter: lab
     category-name: lab fun
-  - data-filter: travel
-    category-name: travel
+  # - data-filter: travel
+  #   category-name: travel
   - data-filter: conference
     category-name: conference
-  - data-filter: other
-    category-name: other
+  # - data-filter: other
+  #   category-name: other
 
 pictures:
   

@@ -12,10 +12,10 @@ $(window).scroll(function() {
 btn.on('click', function(e) {
     e.preventDefault();
     const speechBalloon = document.querySelector('.speech-balloon');
-    const clickSound = new Audio('assets/sounds/collision_sound.wav');
+    // const clickSound = new Audio('assets/sounds/collision_sound.wav');
     $('html, body').animate({scrollTop:0}, '300');
     showSpeech('back to top!');
-    clickSound.play();
+    // clickSound.play();
 });
 
 // helper to show speech balloon messages and auto-hide after 3 seconds
@@ -36,13 +36,13 @@ function showSpeech(text) {
 
 
 // Play pronunciation audio when the emoji is clicked (guarded)
-var _volumeEmojiEl = document.getElementById('volumeEmoji');
-if (_volumeEmojiEl) {
-    _volumeEmojiEl.addEventListener('click', function() {
-        const pronunicationAudio = new Audio('assets/sounds/khang.mp3');
-        pronunicationAudio.play();
-    });
-}
+// var _volumeEmojiEl = document.getElementById('volumeEmoji');
+// if (_volumeEmojiEl) {
+//     _volumeEmojiEl.addEventListener('click', function() {
+//         const pronunicationAudio = new Audio('assets/sounds/khang.mp3');
+//         pronunicationAudio.play();
+//     });
+// }
 
 
 // Toggle navigation menu bar
@@ -86,7 +86,7 @@ function toggleTheme() {
     const bodyEl = document.body;
     const buttonEl = document.querySelector('.toggle-theme-button');
     const speechBalloon = document.querySelector('.speech-balloon');
-    const clickSound = new Audio('assets/sounds/switch_sound.wav');
+    // const clickSound = new Audio('assets/sounds/switch_sound.wav');
 
     if (bodyEl.classList.contains('light-theme')) {
         bodyEl.classList.remove('light-theme');
@@ -95,7 +95,7 @@ function toggleTheme() {
         buttonEl.classList.add('dark-theme');
         buttonEl.innerText = '☀️';
         showSpeech('lights turned off!');
-        clickSound.play();
+        // clickSound.play();
     } else {
         bodyEl.classList.remove('dark-theme');
         bodyEl.classList.add('light-theme');
@@ -103,7 +103,7 @@ function toggleTheme() {
         buttonEl.classList.add('light-theme');
         buttonEl.innerText = '🌙';
         showSpeech('lights turned on!');
-        clickSound.play();
+        // clickSound.play();
     }
 }
 
@@ -190,7 +190,7 @@ if (popupIconContainer) {
 
 // Capture mouse up (desktop) or touch end (mobile) events
 document.addEventListener(endEvent, (e) => {
-    const clickSound = new Audio('assets/sounds/disappear_sound.wav');
+    // const clickSound = new Audio('assets/sounds/disappear_sound.wav');
 
     if (!isDragging) {
         return;
@@ -204,7 +204,7 @@ document.addEventListener(endEvent, (e) => {
     // Check if icon is near the middle bottom dismissal area
     if (Math.abs(clientX - centerX) < 50 && Math.abs(clientY - centerY) < 100) {
         if (popupIconContainer) popupIconContainer.classList.add('hidden');
-        clickSound.play();
+        // clickSound.play();
     }
 
     if (dismissalArea) dismissalArea.style.display = 'none';
@@ -258,8 +258,8 @@ var frontEndCard = document.getElementById('front_end_card');
 if (frontEndCard) {
     frontEndCard.addEventListener('click', function() {
         this.classList.toggle('flip');
-        const flipAudio = new Audio('assets/sounds/flipcard_sound.mp3');
-        flipAudio.play();
+        // const flipAudio = new Audio('assets/sounds/flipcard_sound.mp3');
+        // flipAudio.play();
     });
 }
 
@@ -310,7 +310,7 @@ filterButtonsGithub.forEach(function(filterButtonGithub) {
 
 
 // Function to update Isotope layout with smooth transitions
-function updateLayout(collapseElement, isExpanding) {
+function updateLayoutProjects(collapseElement, isExpanding) {
     
     // Initialize Isotope with vertical layout
     var iso = new Isotope('#projects', {
@@ -337,9 +337,9 @@ function updateLayout(collapseElement, isExpanding) {
 
 // Bind updateLayout function to the collapsible elements' events
 $('.collapse').on('show.bs.collapse', function () {
-    updateLayout(this, true);
+    updateLayoutProjects(this, true);
 }).on('hide.bs.collapse', function () {
-    updateLayout(this, false);
+    updateLayoutProjects(this, false);
 });
 
 
@@ -457,6 +457,42 @@ function initializeIsotopeProjects() {
     });
 }
 
+// Function to update Isotope layout with smooth transitions
+function updateLayoutPictures(collapseElement, isExpanding) {
+    
+    // Initialize Isotope with vertical layout
+    var iso = new Isotope('#gallery-pictures', {
+        itemSelector: '.pictures',
+        layoutMode: 'vertical'
+    });
+
+    if (isExpanding) {
+        $(collapseElement).css('display', 'none');
+        iso.arrange();
+        setTimeout(function() {
+            $(collapseElement).css('display', '');
+            iso.arrange();
+        }, 300);
+    } else {
+        iso.arrange();
+        setTimeout(function() {
+            $(collapseElement).css('display', 'none');
+            iso.arrange();
+        }, 300);
+    }
+}
+
+
+// Bind updateLayout function to the collapsible elements' events
+$('.collapse').on('show.bs.collapse', function () {
+    updateLayoutPictures(this, true);
+}).on('hide.bs.collapse', function () {
+    updateLayoutPictures(this, false);
+});
+
+
+
+
 
 // Function load GitHub repositories
 document.addEventListener('DOMContentLoaded', () => {
@@ -515,6 +551,124 @@ var $cards = $('#github-cards').isotope({
     itemcategory: '.github-card',
     layoutMode: 'fitRows'
 });
+
+
+// Gallery / pictures pagination & filtering (matches projects pattern)
+var itemsPerPagePictures = 10;
+var currentNumberPagesPictures = 1;
+var currentPagePictures = 1;
+var currentFilterPictures = '*';
+var filterAtributePictures = 'data-filter';
+var pageAtributePictures = 'data-page-picture';
+var pagerClassPictures = 'isotope-pager-pictures';
+var $pictures = $('#gallery-pictures').isotope({
+    itemSelector: '.gallery-card',
+    layoutMode: 'fitRows'
+});
+
+
+// Filter based on input category for pictures
+function filterCategoryPictures(category) {
+    $pictures.isotope({
+        filter: category
+    });
+}
+
+
+// Determine items to be categorized and displayed per page for pictures
+function showPagePictures(n) {
+    currentPagePictures = n;
+    var category = '.gallery-card';
+        category += ( currentFilterPictures != '*' ) ? '[' + filterAtributePictures + '="' + currentFilterPictures + '"]' : '';
+        category += '[' + pageAtributePictures + '="' + currentPagePictures + '"]';
+    filterCategoryPictures(category);
+}
+
+
+// Update pager indicator when user clicks previous or next button (pictures)
+function updatePagerPictures() {
+    var $isotopePager = ($('.' + pagerClassPictures).length == 0 ) ? $('<div class="' + pagerClassPictures + '"></div>') : $('.' + pagerClassPictures);
+    $isotopePager.html('');
+
+    var $previous = $('<button class="pager" id="previous-page">&#8592; previous</button>');
+    $previous.click(function() {
+        if (currentPagePictures > 1) {
+            showPagePictures(currentPagePictures - 1);
+            updatePagerPictures();
+            scrollToTopDiv('#gallery');
+        }
+    });
+    if (currentPagePictures === 1) {
+        $previous.prop('disabled', true);
+    }
+    
+    var $next = $('<button class="pager" id="next-page">next &#8594;</button>');
+    $next.click(function() {
+        if (currentPagePictures < currentNumberPagesPictures) {
+            showPagePictures(currentPagePictures + 1);
+            updatePagerPictures();
+            scrollToTopDiv('#gallery');
+        }
+    });
+    if (currentPagePictures === currentNumberPagesPictures) {
+        $next.prop('disabled', true);
+    }
+
+    var $currentPageIndicator = $('<span class="current-page">&nbsp; page ' + currentPagePictures + ' of ' + currentNumberPagesPictures + ' &nbsp; </span>');
+    
+    $previous.appendTo($isotopePager);
+    $currentPageIndicator.appendTo($isotopePager);
+    $next.appendTo($isotopePager);
+    $pictures.after($isotopePager);
+}
+
+
+// Set pagination for pictures
+function setPaginationPictures() {
+    var SettingsPagesOnItems = function() {
+        var itemsLength = $pictures.children('.gallery-card').length;
+        var pages = Math.ceil(itemsLength / itemsPerPagePictures);
+        var item = 1;
+        var page = 1;
+        var category = '.gallery-card';
+            category += ( currentFilterPictures != '*' ) ? '[' + filterAtributePictures + '="' + currentFilterPictures + '"]' : '';
+        
+        $pictures.children(category).each(function() {
+            if (item > itemsPerPagePictures) {
+                page++;
+                item = 1;
+            }
+            $(this).attr(pageAtributePictures, page);
+            item++;
+        });
+        currentNumberPagesPictures = page;
+    }();
+
+    updatePagerPictures();
+}
+
+
+// Initialize isotope for pictures (projects-like behavior)
+function initializeIsotopePictures() {
+    // Set number of pages, return to first page,
+    setPaginationPictures();
+    showPagePictures(1);
+
+
+    // Filter pictures based on category, including change active buttons, filter pictures, 
+    // set the number of pages, return to the first page, and update the pager indicator 
+    $('#filters-pictures .filter-button').off('click').on('click', function() {
+        $('#filters-pictures .filter-button').removeClass('active');
+        $(this).addClass('active');
+        var filter = $(this).attr('data-filter');
+        currentFilterPictures = filter;
+        setPaginationPictures();
+        showPagePictures(1);
+        updatePagerPictures();
+    });
+    // mark as initialized so fallback timer knows it's done
+    window._galleryIsotopeInitialized = true;
+}
 
 
 // Filter based on input category
@@ -642,40 +796,19 @@ $(document).ready(function() {
         initializeOwlCarousel();
         initializeIsotopeProjects();
         initializeIsotopeGithub();
-        initializeIsotopeGallery();
+        initializeIsotopePictures();
     });
     // Fallback: if images hang or onerror doesn't fire for some reason, ensure gallery initializes
     setTimeout(function() {
         if (!window._galleryIsotopeInitialized) {
-            initializeIsotopeGallery();
+            initializeIsotopePictures();
         }
     }, 2000);
 });
 
 
 // Initialize Isotope for gallery pictures (filter by category)
-function initializeIsotopeGallery() {
-    if (window._galleryIsotopeInitialized) return;
-    if ($('#pictures').length === 0) {
-        window._galleryIsotopeInitialized = true;
-        return;
-    }
-
-    window._galleryIsotopeInitialized = true;
-    var $gallery = $('#pictures').isotope({
-        itemSelector: '.news-card',
-        layoutMode: 'fitRows'
-    });
-
-    // Bind filter buttons (generated from categories in YAML)
-    $('#filters-pictures .filter-button').off('click').on('click', function() {
-        $('#filters-pictures .filter-button').removeClass('active');
-        $(this).addClass('active');
-        var filter = $(this).attr('data-filter');
-        var selector = (filter === '*') ? '*' : '.news-card[data-filter="' + filter + '"]';
-        $gallery.isotope({ filter: selector });
-    });
-}
+// (Old initializeIsotopeGallery removed; using project-style initializeIsotopePictures instead.)
 
 
 // Dark/Light theme based on predefined time

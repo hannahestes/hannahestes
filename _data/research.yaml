@@ -2,9 +2,28 @@ categories:
 
   - data-filter: spm
     category-name: software product management
-
+  # - data-filter: other
+  #   category-name: other
 
 projects:
+  - title: 'An Empirical Study of the Alignment between Software Product Managers and Software Engineers'
+    system-name: 
+    gif: assets/img/FSE-SEET graphic.jpg
+    conference: FSE (Montreal, Canada) 
+    conference-web: https://conf.researchr.org/home/fse-2026
+    status: Currently Under Review
+    authors: <u>Hannah Estes</u>, Satwika Kancharla, Kathryn T. Stolee.
+    pdf: 
+    code: 
+    demo: 
+    slides:
+    talk: 
+    doi:
+    poster: 
+    abstract-less: On a software team, a software product manager is the bridge between customers and software engineers. They seek to understand the customers' needs and work with the software team to deliver solutions. Thus, collaboration between software engineers and software product managers is important. However, effective collaboration can break down in the presence of mismatched expectations. To clarify software engineers' expectations and identify potential 
+    abstract-more: misalignment between software product managers and software engineers, we designed and deployed a survey targeting software professionals that asks about the questions product managers should answer. We received 278 questions from 40 software product managers and 33 software engineers representing 21 companies. We classified the set of questions revealing topics surrounding the <i>logistics, product</i>, and <i>users.</i> Our results reveal that software engineers more often want to ask software product managers about users' characteristics and user <i>feedback</i> about the product. Our discussion includes details on problematic experiences that have arisen when working with software product managers, demonstrating that the misunderstanding of the <i>product</i>, <i>customers</i>, <i>market</i>, and <i>technical feasibility</i> of designs can lead to frustration. Through this work, we identify what software engineers want to ask software product managers, how that aligns with questions software product managers answer, and outline future research directions in this space.
+    tag: spm_questions
+    category: spm
 
   - title: 'Advancing Software Product Management Education: Insights from an Industry Survey'
     system-name: 

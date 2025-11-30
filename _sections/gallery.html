@@ -3,7 +3,7 @@
 <hr>
 <div class="row" id="gallery">
     <div class="col">
-        <h2 class="mb-5"><i class="fas fa-camera" aria-hidden="true"></i>  gallery</h2>
+        <h2 class="mb-1"><i class="fas fa-camera" aria-hidden="true"></i>  gallery</h2>
         <p></p>
         <div id="filters-pictures">
             <button class="filter-button active" data-filter="*">all</button>
@@ -12,7 +12,7 @@
             {% endfor %}
         </div>
         <p></p>
-        <div id="pictures" class="isotope">
+        <div id="gallery-pictures" class="gallery">
             {% for picture in site.data.gallery.pictures %}
                 {% include_relative _libs/gallery_widget.html %}
             {% endfor %}
