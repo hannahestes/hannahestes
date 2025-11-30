@@ -12,7 +12,7 @@ projects:
     conference: FSE (Montreal, Canada) 
     conference-web: https://conf.researchr.org/home/fse-2026
     status: Currently Under Review
-    authors: <u>Hannah Estes</u>, Satwika Kancharla, Kathryn T. Stolee.
+    authors: <b>Hannah Estes</b>, Satwika Kancharla, Kathryn T. Stolee.
     pdf: 
     code: 
     demo: 
@@ -31,7 +31,7 @@ projects:
     conference: FSE-SEET (Trondheim, Norway) 
     conference-web: https://conf.researchr.org/home/fse-2025
     status:
-    authors: <u>Hannah Estes</u>, Katie Hollowell, John Cheek, and Shiv Patel, Hanna Reese, Kathryn T. Stolee.
+    authors: <b>Hannah Estes</b>, Katie Hollowell, John Cheek, and Shiv Patel, Hanna Reese, Kathryn T. Stolee.
     pdf: assets/papers/AdvancingSPMEducation_FSE_SEET_2025.pdf
     code: 
     demo: 
