@@ -1,6 +1,6 @@
 # Academic Website
 
-This repository contains source code of [my academic website](https://mkhangg.com/) using Jekyll as a static website generator. Feel free to clone this code for your personal use!
+This repository contains source code of [my academic website](https://hannahestes.github.com/) using Jekyll as a static website generator. Feel free to clone this code for your personal use!
 
 
 ## Template from Khang Nguyen
