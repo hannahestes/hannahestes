@@ -1,14 +1,14 @@
 <div class="project" data-filter="{{ project.category }}">
     <div class="row mb-4">
-        <div class="col-sm-4">
+        <div class="col-sm-5">
             <img width="100%" height="auto" class="w-full rounded-lg" src="{{ project.gif }}">
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-7">
             {% if project.system-name %} <b><i>{{ project.system-name }}</i>:</b> {% endif %}
             <b>{{ project.title }}</b>
             <br>
             <i><a href="{{ project.conference-web }}" target="_blank" rel="noopener">{{ project.conference }}</a></i> 
-            {% if project.status %} <b style = "color: #e74d3c">[{{ project.status }}]</b> {% endif %}
+            {% if project.status %} <b style = "color: #5C878E">[{{ project.status }}]</b> {% endif %}
             <br>
             {{ project.authors }}
             <br>

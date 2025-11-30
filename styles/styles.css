@@ -7,8 +7,8 @@
     --color-text-light: #333333;
     --color-bg-dark: #333333;
     --color-text-dark: #ffffff;
-    --color-accent: #bd5d38; /* primary accent */
-    --color-accent-strong: #824027; /* hover/darker accent */
+    --color-accent: #A8B298; /* #bd5d38; /* primary accent */
+    --color-accent-strong: #777E6D; /*#824027; /* hover/darker accent */
     --color-selection-light: #ffb699;
     --color-selection-dark: #545454;
     --color-surface: #f5f5f5; /* nav, surfaces */
@@ -32,16 +32,34 @@
     --color-border-muted: #aaaaaa;
     --overlay-grad: rgba(0,0,0,0.55);
     --overlay-grad-start: rgba(0,0,0,0);
+    /* Palette tokens */
+    --palette-green-light: #bcdf86;
+    --palette-green-dark: #8dc048;
+    --palette-brown-light: #B36C56;
+    --palette-brown-dark: #9B5946;
+    /* theme accent placeholders (can be overridden per-theme) */
+    --accent-light: var(--palette-brown-light);
+    --accent-light-strong: var(--palette-brown-dark);
+    --accent-dark: var(--palette-green-light);
+    --accent-dark-strong: var(--palette-green-dark);
 }
 
 /* Theme-specific convenience aliases */
 .light-theme {
     --bg: var(--color-bg-light);
     --text: var(--color-text-light);
+    /* light theme accent */
+    --color-accent: var(--accent-light);
+    --color-accent-strong: var(--accent-light-strong);
+    --color-link: var(--accent-light);
 }
 .dark-theme {
     --bg: var(--color-bg-dark);
     --text: var(--color-text-dark);
+    /* dark theme accent */
+    --color-accent: var(--accent-dark);
+    --color-accent-strong: var(--accent-dark-strong);
+    --color-link: var(--accent-dark);
 }
 
 body.light-theme {
@@ -218,6 +236,22 @@ nav ul li p:hover span.text {
     left: 0px;
 }
 
+.light-theme .animated-menu span {
+  color: var(--accent-light);
+}
+
+.light-theme .animated-menu p {
+  color: var(--accent-light);
+}
+
+.dark-theme .animated-menu span {
+  color: var(--accent-dark);
+}
+
+.dark-theme .animated-menu p {
+  color: var(--accent-dark);
+}
+
 
 /* Code-style text for research interest */
 code {
@@ -273,7 +307,7 @@ code {
     box-sizing: border-box;
     position: relative;
 }
-.ring::before {
+.light-theme .ring::before {
     content: '';
     position: absolute;
     top: 0;
@@ -283,9 +317,26 @@ code {
     border-radius: 50%;
     padding: 4px;
     box-sizing: border-box;
-    background: linear-gradient(to right, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    /* background: linear-gradient(to right, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); */
+    background: var(--accent-light-strong);
     mask-composite: exclude;
 }
+
+.dark-theme .ring::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    padding: 4px;
+    box-sizing: border-box;
+    /* background: linear-gradient(to right, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); */
+    background: var(--accent-dark-strong);
+    mask-composite: exclude;
+}
+
 .hollow-ring {
     width: 152px;
     height: 152px;

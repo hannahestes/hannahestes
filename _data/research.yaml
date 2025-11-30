@@ -8,7 +8,7 @@ categories:
 projects:
   - title: 'An Empirical Study of the Alignment between Software Product Managers and Software Engineers'
     system-name: 
-    gif: assets/img/FSE-SEET graphic.jpg
+    gif: assets/img/questions-graphic.png
     conference: FSE (Montreal, Canada) 
     conference-web: https://conf.researchr.org/home/fse-2026
     status: Currently Under Review
@@ -27,7 +27,7 @@ projects:
 
   - title: 'Advancing Software Product Management Education: Insights from an Industry Survey'
     system-name: 
-    gif: assets/img/FSE-SEET graphic.jpg
+    gif: assets/img/fse-seet-graphic.png
     conference: FSE-SEET (Trondheim, Norway) 
     conference-web: https://conf.researchr.org/home/fse-2025
     status:
